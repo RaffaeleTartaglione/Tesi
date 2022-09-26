@@ -1,6 +1,6 @@
 # Tesi
 
-Guida per l'installare:
+Guida per l'utilizzo:
 
 Si consiglia di usare come editor Visual Studio Code
 https://code.visualstudio.com/
