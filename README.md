@@ -17,6 +17,7 @@ Per eseguire il programma, inserire nel terminale:
 "python .\app.py"
 
 
+
 # Problemi ancora da risolvere
 - sistemare generazione automatica quando il livello su cui si vuole ottenere una determinata tipologia di Miss è uguale a 2
 - inserire controlli su input forniti dall'utente per costruire le cache
