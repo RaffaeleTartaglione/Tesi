@@ -504,7 +504,11 @@ class Cache():
             for k,v in cache_table.get_init().items():
                 if k not in cachef:
                     cachef[k] = v
-            cachef = [[k,v] for k,v in cachef.items()]
+                    
+            init_index_order = list(cache_table.get_init().keys())
+            index_map = {v: i for i, v in enumerate(init_index_order)}
+            cachef = sorted(cachef.items(), key=lambda pair: index_map[pair[0]])
+            #cachef = [[k,v] for k,v in cachef.items()]
             #cache_table.fin = cachef
             print(cachef)
             print(tabf)
