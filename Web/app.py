@@ -296,7 +296,7 @@ class TableGenerateView(ListView):
             ricalcolo = True
             while ricalcolo:
                 #calcola dim blocco 
-                addresses, distanza, ind1, ind2 = genera_indirizzi.genera_indirizzi(tipo_miss, size_max, data_type[0]*data_dim[0], sets[0], ways[0], n_indirizzi)
+                addresses, distanza, ind1, ind2 = genera_indirizzi.genera_indirizzi(tipo_miss, size_max, data_type[1]*data_dim[1], sets[1], ways[1], n_indirizzi)
                 indici = []
                 candidate = cache.Cache(addresses, cache_type, data_type, data_dim, sets, ways, 1, offset, cacheinit, lvlinit)                        #livello impostato a 1
                 candidate.riempicache()
