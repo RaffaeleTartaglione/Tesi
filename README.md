@@ -20,5 +20,6 @@ Per eseguire il programma, inserire nel terminale:
 
 
 # Problemi ancora da risolvere
+- sistemare caso cache iniziale
 - inserire controlli su input forniti dall'utente per costruire le cache
 - sistemare la grafica
