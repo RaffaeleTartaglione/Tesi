@@ -22,4 +22,3 @@ Per eseguire il programma, inserire nel terminale:
 # Problemi ancora da risolvere
 - inserire controlli su input forniti dall'utente per costruire le cache
 - sistemare la grafica
-- piccolo problema con la simulazione, risolverò in giornata
