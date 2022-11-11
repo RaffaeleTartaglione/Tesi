@@ -16,9 +16,3 @@ All'interno del terminale dell'editor inserire:
 
 Per eseguire il programma, inserire nel terminale:
 "python .\app.py"
-
-
-
-# Problemi ancora da risolvere
-- inserire controlli su input forniti dall'utente per costruire le cache
-- sistemare la grafica
