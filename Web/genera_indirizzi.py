@@ -91,7 +91,7 @@ def genera_indirizzi(tipo_miss, size_max, dim_blocco, sets, ways, n_indirizzi):
         while pos_random in indici_usati:
             pos_random = random.randint(ind1 + 1, ind2)                                 #prendo una posizione mai usata finora
 
-        pos_indici_usati_random = indici_usati[random.randint(0, len(indici_usati))]    #prendo un indice già usato perchè così so che il valore non verrà mai modificato
+        pos_indici_usati_random = indici_usati[random.randint(0, len(indici_usati)-1)]    #prendo un indice già usato perchè così so che il valore non verrà mai modificato
         random_value = random_addresses[pos_indici_usati_random]                        #prendo il valore corrispondente
         #calcolare intervallo
         min_value = int(random_value/dim_blocco) * dim_blocco                           #mi calcolo l'intervallo del valore
