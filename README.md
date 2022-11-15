@@ -16,3 +16,7 @@ All'interno del terminale dell'editor inserire:
 
 Per eseguire il programma, inserire nel terminale:
 "python .\app.py"
+
+# Problemi
+
+- errore presente in generazione caso particolare miss
