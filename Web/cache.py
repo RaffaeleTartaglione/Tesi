@@ -135,6 +135,7 @@ class Cache():
                                         elif data[l][1][j].get_value() == data[l][1][i].get_value() and data[l][2][j].get_value() == data[l][2][i].get_value() and n_way > 0:
                                             data[l][3][i].set_value("H")
                                             data[l][4][i].set_value(" ")
+                                            break
 
                                         elif n_way <= 0 and (data[l][0][j].get_value() == data[l][0][i].get_value()):   #dobbiamo capire se è miss di cap o di conf
                                             #diff = (i - j - vuoti - (len([x.get_value() for x in data[l][0][j:i]]) - len(set([x.get_value() for x in data[l][0][j:i]]))))
@@ -144,6 +145,7 @@ class Cache():
                                                 data[l][4][i].set_value("Conf.")
                                             else:
                                                 data[l][4][i].set_value("Cap.")
+                                            break
 
                                         elif n_way <= 0 and cache_table.get_lvlinit() - 1 == l and (j) == 0 and data[l][0][j].get_value() != data[l][0][i].get_value():   #dobbiamo capire se è miss di cap o di conf
                                             
@@ -172,6 +174,7 @@ class Cache():
                                                 data[l][4][i].set_value("Conf.")
                                             else:
                                                 data[l][4][i].set_value("Cap.")
+                                            break
 
                                 else:
                                     data[l][3][i] = fasi.TipoMiss("H")
@@ -190,6 +193,7 @@ class Cache():
                                     elif data[l][1][j].get_value() == data[l][1][i].get_value() and data[l][2][j].get_value() == data[l][2][i].get_value() and n_way > 0:
                                         data[l][3][i].set_value("H")
                                         data[l][4][i].set_value(" ")
+                                        break
 
                                     elif n_way <= 0 and (data[l][0][j].get_value() == data[l][0][i].get_value()):   #dobbiamo capire se è miss di cap o di conf
                                         #diff = (i - j - vuoti - (len([x.get_value() for x in data[l][0][j:i]]) - len(set([x.get_value() for x in data[l][0][j:i]]))))
@@ -199,6 +203,7 @@ class Cache():
                                             data[l][4][i].set_value("Conf.")
                                         else:
                                             data[l][4][i].set_value("Cap.")
+                                        break
         #if lvlinit != 0:
         #calcolo la cache finale (fin)
 
@@ -327,6 +332,7 @@ class Cache():
                                         elif data[l][1][j].get_value() == data[l][1][i].get_value() and data[l][2][j].get_value() == data[l][2][i].get_value() and n_way > 0:
                                             data[l][3][i].set_value("H")
                                             data[l][4][i].set_value("")
+                                            break
 
                                         elif n_way <= 0 and (data[l][0][j].get_value() == data[l][0][i].get_value()):   #dobbiamo capire se è miss di cap o di conf
                                             #diff = (i - j - vuoti - (len([x.get_value() for x in data[l][0][j:i]]) - len(set([x.get_value() for x in data[l][0][j:i]]))))
@@ -336,6 +342,7 @@ class Cache():
                                                 data[l][4][i].set_value("Conf.")
                                             else:
                                                 data[l][4][i].set_value("Cap.")
+                                            break
 
                                         elif n_way <= 0 and cache_table.get_lvlinit() - 1 == l and (j) == 0 and data[l][0][j].get_value() != data[l][0][i].get_value():   #dobbiamo capire se è miss di cap o di conf
                                             
@@ -363,6 +370,7 @@ class Cache():
                                                 data[l][4][i].set_value("Conf.")
                                             else:
                                                 data[l][4][i].set_value("Cap.")
+                                            break
 
                                 else:
                                     data[l][3][i] = fasi.TipoMiss("H")
@@ -381,6 +389,7 @@ class Cache():
                                     elif data[l][1][j].get_value() == data[l][1][i].get_value() and data[l][2][j].get_value() == data[l][2][i].get_value() and n_way > 0:
                                         data[l][3][i].set_value("H")
                                         data[l][4][i].set_value("")
+                                        break
 
                                     elif n_way <= 0 and  (data[l][0][j].get_value() == data[l][0][i].get_value()):   #dobbiamo capire se è miss di cap o di conf
                                         #diff = (i - j - vuoti - (len([x.get_value() for x in data[l][0][j:i]]) - len(set([x.get_value() for x in data[l][0][j:i]]))))
@@ -390,6 +399,7 @@ class Cache():
                                             data[l][4][i].set_value("Conf.")
                                         else:
                                             data[l][4][i].set_value("Cap.")
+                                        break
                                 
                     print("Confronto tra " + str(data[l][f][i].get_value()) + " e " + data_utente[l][f][i])
                     #inserire if che controlla se utente ha immesso spazio vuoto + se mi trovo in index e tag e tipo = fully associative -> ok
