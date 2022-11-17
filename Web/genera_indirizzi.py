@@ -72,9 +72,9 @@ def genera_indirizzi(tipo_miss, size_max, dim_blocco, sets, ways, n_indirizzi):
     #if tipo_miss == "cap" or tipo_miss == "conf":
     while random_ways !=  0:
         #mettere controllo per non rischiare di prendere stesso indice (utile anche per le ripetizioni)
-        pos_random = random.randint(ind1 + 1, ind2)     #PROBLEMA (forse togliere -1)
+        pos_random = random.randint(ind1 + 1, ind2 - 1)     #PROBLEMA (forse togliere -1)
         while pos_random in indici_usati:
-            pos_random = random.randint(ind1 + 1, ind2)
+            pos_random = random.randint(ind1 + 1, ind2 - 1)
         random_addresses[pos_random] = sindex_dtag(valore_scelto, dim_blocco, sets)
         random_ways -= 1
         indici_usati.append(pos_random)
@@ -86,10 +86,10 @@ def genera_indirizzi(tipo_miss, size_max, dim_blocco, sets, ways, n_indirizzi):
     #metterlo in una posizione che non sia in indici_usati
     
     while random_ripetizioni != 0:
-        pos_random = random.randint(ind1 + 1, ind2)     #PROBLEMA (forse togliere -1)
+        pos_random = random.randint(ind1 + 1, ind2 - 1)     #PROBLEMA (forse togliere -1)
 
         while pos_random in indici_usati:
-            pos_random = random.randint(ind1 + 1, ind2)                                 #prendo una posizione mai usata finora
+            pos_random = random.randint(ind1 + 1, ind2 - 1)                                 #prendo una posizione mai usata finora
 
         pos_indici_usati_random = indici_usati[random.randint(0, len(indici_usati)-1)]    #prendo un indice già usato perchè così so che il valore non verrà mai modificato
         random_value = random_addresses[pos_indici_usati_random]                        #prendo il valore corrispondente
