@@ -19,4 +19,4 @@ Per eseguire il programma, inserire nel terminale:
 
 # Problemi
 
-- interessante casistica presente in generazione caso particolare miss
+- problema presente in generazione caso particolare miss
