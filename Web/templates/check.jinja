@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<!-- <form action="/" method="POST"> -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cache</title>
+        <link rel="stylesheet" href="/static/styles.css" />
+    </head>
+<body>
+
+<div class="page-header">
+              <div class=writing style="min-height:50px;max-height:50px;text-aligh:center;padding-top=4px;" title="Correzione e generazione automatica di esercizi di architettura degli elaboratori">
+              <h1 style="text-align:center;color:white;">Controlla la valutazione</h1>
+              </div>
+       </div>
+
+    <br><br><br><br>
+
+<h1>Risultato correzione:</h1>
+
+<h3>Errori: {{errori}}</h3>
+
+<h3>Commenti: {{rag_commenti}}</h3>
+
+<h3>Posizione errori: {{ecp}}</h3>
+
+{% if lvlrif != 0 %} <h3>Posizione errori: {{iecf}}</h3> {%endif%}
+
+<br>
+
+<form action="/cachec" method="POST" id="form" >
+    {%for idx, headings, data in tables%}
+        <h3>L{{idx}}</h3>
+        <table class="table">
+            <tr class="table__header">
+                {% for header in headings%}
+                <th class="table__cell">{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% set row_idx = namespace(value=0) %}
+            {% for row in data[idx-1] %}
+            <tr class="table__row">
+                {% set col_idx = namespace(value=0) %}
+                {% for cell in row %}
+                
+                <td  class="table__cell" name="cell" id="cell" style="{%if (idx-1, row_idx.value, col_idx.value-1) in ie%}background-color:red{%endif%}"> 
+                <input class='table__cell' size=5 type="text" name="cell_value_{{idx}}" id="cell_value_{{idx}}" value="{{ cell }}" readonly />
+                </td>
+                {% set col_idx.value = col_idx.value + 1 %}
+                {% endfor %}
+            </tr>
+            {% set row_idx.value = row_idx.value + 1 %}
+
+            {% endfor %}
+        </table>
+    {%endfor%}
+{% if lvlrif != 0 %}
+    <br><br>
+
+
+        <h3>L{{lvlinit}} cache iniziale</h3>
+            <table class="table">
+                <tr class="table__header">
+                <th class="table__cell">Index</th>
+            <th class="table__cell">Tag</th>
+                </tr>
+                {% for row in init %}
+                <tr class="table__row">
+                    {% for cell in row %}
+                    <td  class="table__cell" name="cell" id="cell"> 
+                    <input class='table__cell' size=5 type="text" name="cell_value_i" id="cell_value_i" value="{{ cell }}" readonly />
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+
+
+
+        <h3>L{{lvlinit}} cache finale</h3>
+            <table class="table">
+                <tr class="table__header">
+                    <th class="table__cell">Index</th>
+            <th class="table__cell">Tag</th>
+                </tr>
+                {% set row_idx = namespace(value=0) %}
+                {% for row in tabf %}
+                <tr class="table__row">
+                    {% set col_idx = namespace(value=0) %}
+                    {% for cell in row %}
+                    <td  class="table__cell" name="cell" id="cell" style="{%if row_idx.value in iecf%}background-color:red{%endif%}">
+                    <input class='table__cell' size=5 type="text" name="cell_value_f" id="cell_value_f" value="{{ cell }}" readonly />
+                    </td>
+                    {% set col_idx.value = col_idx.value + 1 %}
+                    {% endfor %}
+                </tr>
+                {% set row_idx.value = row_idx.value + 1 %}
+                {% endfor %}
+            </table>
+{%endif%}
+
+<br>
+
+    <input type="text" value='{{params}}' name="params" id="params" hidden> <br>
+    <input type="submit" value="Ritenta">
+
+    <div class="page-footer"></div>
+
+</form>
+</body>
+</html>
