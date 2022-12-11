@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<!-- <form action="/" method="POST"> -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Scegli la funzionalità</title>
+        <link rel="stylesheet" href="/static/styles.css" />
+    </head>
+<body>
+       <div class="page-header">
+              <div class=writing style="min-height:50px;max-height:50px;text-aligh:center;padding-top=4px;" title="Correzione e generazione automatica di esercizi di architettura degli elaboratori">
+              <h1 style="text-align:center;color:white;">Correzione e generazione automatica di esercizi di architettura degli elaboratori</h1>
+              </div>
+       </div>
+
+       <br><br><br><br>
+
+       <h1>Scegli il tipo di funzionalità</h1>
+
+       <form id="myform" method="GET" action="/main">
+       <input type="submit" value="Correzione"
+              onclick="document.forms['myform'].action='/main'">
+       <input type="submit" value="Generazione"
+              onclick="document.forms['myform'].action='/generazione'">
+       <input type="submit" value="Simulazione"
+              onclick="document.forms['myform'].action='/simulazione'">
+
+       <br><br>
+
+       <h3>Guida per corretto utilizzo:</h3>
+       
+       <p style="font-size: 19px">
+       - Selezionare "Correzione" se ci si vuole mettere alla prova su uno specifico esercizio.<br>
+       - E' possibile scegliere un tipo di correzione consono ad un vero e proprio "esame", dove la tabella deve essere completata interamente prima di essere sottomessa altrimenti la casella lasciata vuota 
+       (qualora non debba esserci) <br> viene considerata come errore; dopodichè abbiamo la correzione "cella per cella", dove è possibile ritentare quante volte si desidera
+       avendo completato anche solo una casella. <br> I dati forniti, una volta richiesto di ritentare, saranno conservati.<br>
+       <br>
+       - Selezionare "Generazione" se si vuole costruire una cache generata randomicamente in base a dati e casi forniti.<br>
+       <br>
+       - Selezionare "Simulazione" se si vuole osservare il funzionamento di una cache generata randomicamente in base a dati e casi forniti.
+       </p>
+
+       <div class="page-footer"></div>
+</body>
+
+</form>
